@@ -24,3 +24,45 @@ Every custom signature requires a `perform` function. This is the entry point fo
 
 This is a live AWS object that is a actually a ruby object passed into the javascript DSL during runtime. This object supports all the services ESP support as methods. These services are live API clients to AWS. Please see the section below for a list of each currently supported services.
 
+### Services on the `aws` object
+
+|:-----:|:-----:|
+|Service|Method |
+|:------|:------|
+|Route53|route53|
+|Glacier|glacier|
+|ElasticBeanstalk|elbs|
+|EC2|ec2|
+|IAM|iam|
+|SQS|sqs|
+|SES|ses|
+|RDS|rds|
+|ElasticTranscoder|elt|
+|ElasticLoadBalancing|elb|
+|SimpleDB|sdb|
+|CloudFormation|cfm|
+|OpsWorks|ops|
+|SNS|sns|
+|STS|sts|
+|EMR|emr|
+|S3|s3|
+|CloudSearch|cs|
+|CloudWatch|cw|
+|CloudFront|cf|
+|CloudTrail|ct|
+|StorageGateway|sg|
+|AutoScaling|rs|
+|Kinesis|ks|
+|ElastiCache|ec|
+|Route53Domains|route53_domains|
+|CognitoSync|cognito_sync|
+|CognitoIdentity|cognito|
+|Lambda|lambda|
+|ConfigService|config|
+|CloudWatch|cw|
+|CloudWatchLogs|cwl|
+|CodeDeploy|cd|
+|DirectConnect|dc|
+|ImportExport|ie|
+|DataPipeline|dp|
+|ElastiCache|ec|
