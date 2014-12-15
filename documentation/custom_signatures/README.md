@@ -65,3 +65,13 @@ This is a live AWS object that is a actually a ruby object passed into the javas
 |ImportExport|ie|
 |DataPipeline|dp|
 |ElastiCache|ec|
+
+#### Example
+```
+aws.ec2()
+```
+
+All of these objects map to the ruby AWS SDK client objects. You should be able to do any of the actions that are defined in the documentation there. 
+
+Please note that most arguments should be passed in as hashes. For example: For S3 to get an object it requires bucket: and key: as in `aws.s3().get_object({bucket: ‘bucket_name’, key: ‘bucket_key’})`. These arguments are converted into ruby objects in the Custom Signature engine.
+
