@@ -26,7 +26,6 @@ This is a live AWS object that is a actually a ruby object passed into the javas
 
 ### Services on the `aws` object
 
-|:-----:|:-----:|
 |Service|Method |
 |:------|:------|
 |Route53|route53|
