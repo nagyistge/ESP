@@ -75,3 +75,13 @@ All of these objects map to the ruby AWS SDK client objects. You should be able 
 
 Please note that most arguments should be passed in as hashes. For example: For S3 to get an object it requires bucket: and key: as in `aws.s3().get_object({bucket: ‘bucket_name’, key: ‘bucket_key’})`. These arguments are converted into ruby objects in the Custom Signature engine.
 
+### DSL Object
+
+The `dsl` object in custom signatures is another ruby object passed into the JavaScript during runtime. This object gives access to setting deep inspection and unique identifier data as well as returning an alert of the signature. Currently supported methods are below.
+
+* `dsl.set_data()` Used to set deep inspection and unique identifier data. _Please note_ that you must pass in either a hash of that data or the object required to take the data from. So if you set `:username` in deep inspection or unique identifier the object you pass to set data must respond to `:username` as a method or value in some way. This will add the data automatically to any alert you create. So if you are creating alerts within a loop you must call this method before each alert creation and it will add the data to each alert.
+* `dsl.pass()` This will create a passing alert. Takes an optional hash for extra information in the alert. Example `dsl.pass({message: ‘MFA on root yay!’})`. _Please note_ you can pass whatever key value pairs you want to show up in the alert.
+* `dsl.fail()` This will create a failing alert. Takes an optional hash for extra information in the alert. Example `dsl.fail({message: ‘No MFA on root :(’}).` _Please note_ you can pass whatever key value pairs you want to show up in the alert.
+* `dsl.warn()` This will create a warning alert. Takes an optional hash for extra information in the alert. Example `dsl.warn({message: ‘Some warning’})`. _Please note_ you can pass whatever key value pairs you want to show up in the alert.
+* `dsl.error()` This will create a error alert. Takes an optional hash for extra information in the alert. Example `dsl.error({error: ‘something bad happened’})`. _Please note_ you can pass whatever key value pairs you want to show up in the alert.
+
