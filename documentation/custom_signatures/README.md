@@ -85,3 +85,28 @@ The `dsl` object in custom signatures is another ruby object passed into the Jav
 * `dsl.warn()` This will create a warning alert. Takes an optional hash for extra information in the alert. Example `dsl.warn({message: ‘Some warning’})`. _Please note_ you can pass whatever key value pairs you want to show up in the alert.
 * `dsl.error()` This will create a error alert. Takes an optional hash for extra information in the alert. Example `dsl.error({error: ‘something bad happened’})`. _Please note_ you can pass whatever key value pairs you want to show up in the alert.
 
+### Deep Inspection
+
+Deep inspection data can be added to any alert by calling `dsl.set_data()` before each alert. The values defined in the configuration is what is pulled out of the objects that are passed into the `set_data` method call. Example `c.deep_inspection   = [‘users']`
+
+Setting this information for your alert: `dsl.set_data(aws.iam.list_users());`
+
+Notice that the object being passed into deep inspection is `list_users()`. The data returned from this object has either a field or method named users defined on it. So `deep_inspection` will pull that data from the object and add it to the alert automatically. Please note that this will be reset between reports.
+
+
+Example for live `deep_inspection` response on an alert:
+
+```
+"deep_inspection" => [
+  [0] {
+    "users" => [
+               
+    [0] {
+      "path" => "/",
+      "user_name" => "joebazooka",
+      "user_id" => "ABCDEF0123456789ABCDE",
+      "arn" => "arn:aws:iam::012345678901:user/joebazooka",
+      "create_date" => "2014-09-23T16:22:48.000Z",
+      "password_last_used" => "2014-10-20T19:33:05.000Z"
+    }
+```
