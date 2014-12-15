@@ -15,3 +15,12 @@ Every custom signature requires a `dsl.configure` function. It sets up parameter
 `c.display_as` is not required. This was added for signatures when they are global, i.e. a signature is run in us-east-1, but the signature has no requirement on what region it runs in because the result is the same.
 `c.deep_inspection` is not required. Deep inspection allows you to set extra data on the alert or alerts that the signature is returning. The Deep Inspection section below provides details about this parameter.
 `c.unique_identifier` is not required. Unique identifier allows you to set data on a alert or alerts to make the signature more unique through data. This works in conjunction with deep inspection, and is explained more in the unique identifier section below.
+
+### `perform` Function
+
+Every custom signature requires a `perform` function. This is the entry point for the signature engine to call and pass in the live aws object. Please see the section below on the AWS object.
+
+### `aws` Object in `perform`
+
+This is a live AWS object that is a actually a ruby object passed into the javascript DSL during runtime. This object supports all the services ESP support as methods. These services are live API clients to AWS. Please see the section below for a list of each currently supported services.
+
