@@ -8,7 +8,6 @@ The Custom Signatures DSL is an interpreted JavaScript language. The AWS-specifi
 ## Configuration Parameters
 Every custom signature requires a `dsl.configure` function. It sets up parameters needed for the custom signature engine.
 
-<<<<<<< HEAD
 `c.module` is currently required to validate signatures and is used by built-in ESP signatures to define method names and classes dynamically during runtime. 
 `c.identifier` is required for reports and being able to search for your specific custom signature. 
 `c.description` is required for the descriptions on signatures within the metascrape console and to validate the signature.
@@ -25,12 +24,3 @@ Every custom signature requires a `perform` function. This is the entry point fo
 
 This is a live AWS object that is a actually a ruby object passed into the javascript DSL during runtime. This object supports all the services ESP support as methods. These services are live API clients to AWS. Please see the section below for a list of each currently supported services.
 
-=======
-1. `c.module` is currently required to validate signatures and is used by built-in ESP signatures to define method names and classes dynamically during runtime. 
-2. `c.identifier` is required for reports and being able to search for your specific custom signature. 
-3. `c.description` is required for the descriptions on signatures within the metascrape console and to validate the signature.
-4. `c.valid_regions` is not required. This is an array of regions that the signature should only run in. This allows you to isolate what regions to run the signature in. Ex [‘us_east_1’] meaning only run this signature in us-east-1.
-5. `c.display_as` is not required. This was added for signatures when they are global, i.e. a signature is run in us-east-1, but the signature has no requirement on what region it runs in because the result is the same.
-6. `c.deep_inspection` is not required. Deep inspection allows you to set extra data on the alert or alerts that the signature is returning. The Deep Inspection section below provides details about this parameter.
-7. `c.unique_identifier` is not required. Unique identifier allows you to set data on a alert or alerts to make the signature more unique through data. This works in conjunction with deep inspection, and is explained more in the unique identifier section below.
->>>>>>> 66357bfad5f9d151ff62b22c60696607be0480b5
