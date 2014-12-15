@@ -3,7 +3,7 @@
 ## Introduction
 Evident Security Platform (ESP) Signatures are the checks that run on top of the AWS API and Config data collected across your AWS accounts. There are two types of ESP Signatures, the default ones, built-in and maintained by Evident, and Custom Signatures maintained by you.  Custom signatures are enabled for ESP enterprise accounts and allow you to extend the functionality of ESP by enhancing, or even replacing, built-in signatures. 
 
-The Custom Signatures DSL is an interpreted JavaScript language. The AWS-specific objects used follow the [AWS SDK for Ruby standards](http://docs.aws.amazon.com/sdkforruby/api/frames.html). ESP Custom signatures can be created here: esp.evident.io/control_panel/custom_signatures/new.
+The Custom Signatures DSL is an interpreted JavaScript language. The AWS-specific objects used follow the [AWS SDK for Ruby standards](http://docs.aws.amazon.com/sdkforruby/api/frames.html). ESP Custom signatures can be created here: https://esp.evident.io/control_panel/custom_signatures/new.
 
 ## Configuration Parameters
 Every custom signature requires a `dsl.configure` function. It sets up parameters needed for the custom signature engine.
